@@ -8,6 +8,8 @@ let inputHoras = 0;
 let inputMinutos = 0;
 let inputSegundos = 0;
 
+let intervalo;
+
 botaoIniciar.addEventListener('click', (event) =>{
     event.preventDefault();
     inputHoras = document.querySelector('.hora__input').value;
@@ -23,7 +25,7 @@ botaoIniciar.addEventListener('click', (event) =>{
         segundosTela.innerHTML = inputSegundos;
     }
 
-    setInterval(atualizaTemporizador, 1000);
+    intervalo = setInterval(atualizaTemporizador, 1000);
     formulario.reset();
 })
 
@@ -43,6 +45,8 @@ function atualizaTemporizador() {
         minutosTela.innerHTML = inputMinutos;
         inputSegundos= 59;
         segundosTela.innerHTML = inputSegundos;
+    } else {
+        clearInterval(intervalo);
     }
 }
 
@@ -50,33 +54,3 @@ let zerarTemporizador = document.querySelector('.botao__zerar');
 zerarTemporizador.addEventListener('click', () => {
    location.reload();
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
