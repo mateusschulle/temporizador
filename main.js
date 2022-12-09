@@ -12,6 +12,7 @@ let intervalo;
 
 botaoIniciar.addEventListener('click', (event) =>{
     event.preventDefault();
+    clearInterval(intervalo);
     inputHoras = document.querySelector('.hora__input').value;
     inputMinutos = document.querySelector('.minuto__input').value;
     inputSegundos = document.querySelector('.segundo__input').value;
